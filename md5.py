@@ -44,7 +44,8 @@ def crack_MD5_Hash(hash_to_crack, wordlist):
     for password in file:
         md5_hash = (password.strip("\n")).encode('UTF-8')
         if hashlib.md5(md5_hash).hexdigest() == hash_to_crack:
-            return password
+            
+            return f"password Cracked ! {password}"
             return None
 
 
@@ -53,7 +54,7 @@ if __name__ == '__main__':
 
     hash_to_crack = sys.argv[1]
     
-    wordlist = sys.argv[2]
+    wordlist = "/opt/SecLists/Passwords/darkweb2017-top10000.txt"
     
 
     Banner()
