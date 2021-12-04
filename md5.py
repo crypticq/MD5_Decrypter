@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import hashlib
 import sys
-
+import time
 
 
 def Banner():
@@ -44,8 +44,6 @@ def crack_MD5_Hash(hash_to_crack, wordlist):
     for password in file:
         md5_hash = (password.strip("\n")).encode('UTF-8')
         if hashlib.md5(md5_hash).hexdigest() == hash_to_crack:
-        else:
-          print(f"Password Not found in {wordlist} , try with another list."
             return password
             return None
 
